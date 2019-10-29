@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="apple-touch-icon" href="logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <script src="https://kit.fontawesome.com/e6a2b6cc7f.js" crossorigin="anonymous"></script>
+    <title>Labeb App</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:300&display=swap');     
+  
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bolder;
+        }
+        .header{
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            background-color: #f5f5f5;
+            height: 70px;
+        }
+        .header img{margin: 11px}
+        .header ul li{list-style: none;display: inline;line-height: 70px;padding: 0 11px ; }
+        .header ul li a{text-decoration: none;color: #1a9bce;line-height: 70px;}
+        .header ul li a:hover{border-bottom: 3px #45bfef solid;color: #ee5188}
+  
+        .header .log-in{line-height: 70px;background-color: #45bfef;padding: 0 36px;height: 70px;}
+        .header .log-in:hover{background-color: black}
+        .header .log-in a{color: white;font-size: 18px;text-decoration: none}
+  
+        .options{
+            width: 100%;
+            height: 85vh;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .options a:hover{text-decoration: none;}
+  
+        .options .buyer{
+            width: 50%;
+            height: 85vh;
+            background-image: url('images/buyer.jpg');
+            background-size: cover;
+            opacity: 0.7;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+        .options .buyer:hover{opacity: 0.8}
+        .buyer-title{
+            background: #227ca0;
+            color: white;
+            padding: 50px;
+            font-size: 36px;
+            font-weight:lighter;
+            width: 100%;
+            display: flex;
+            flex-flow: column nowrap;
+        }
+        .options .seller{
+            width: 50%;
+            height: 85vh;
+            background-image: url('images/seller.jpg');
+            background-size: cover;
+            opacity: 0.7;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+        .options .seller:hover{opacity: 0.8}
+        .seller-title{
+            background: #45bfef;
+            color: white;
+            padding: 50px;
+            font-size: 36px;
+            font-weight:lighter;
+            width: 100%;
+            display: flex;
+            flex-flow: column nowrap;
+        }
+        footer{
+            display: flex !important;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f5f5f5;
+            padding: 11px 0;
+        }
+        footer ul:first-of-type{
+            padding: 0;
+            margin: 11px;
+        }
+        footer ul:first-of-type li{
+            list-style: none;
+            display: inline;
+            margin-right: 11px;
+        }
+        footer ul:first-of-type li a{
+            text-decoration: none;
+            color: black;
+            font-size: 14px;
+        }
+        footer ul:first-of-type li a:hover{color:#45bfef}
+        footer ul:last-of-type{
+            padding: 0;
+            margin: 11px;
+        }
+        footer ul:last-of-type li{
+            list-style: none;
+            display: inline;
+            margin-right: 11px;
+        }
+        footer ul:last-of-type li a{
+            text-decoration: none;
+            color: black;
+            font-size: 14px;
+        }
+        footer ul:last-of-type li a:hover{color:#45bfef}
+  
+        .login-page{
+          background-color: #45bfef;
+          padding: 111px 524px;
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: space-around;
+          align-items: center;
+          border-radius: 21px 0 21px 0;
+        }
+        .login-page h1{color: white;margin-bottom: 22px}
+        .login-page input:first-of-type{
+          padding: 22px;
+          background-color: #f1f1f1;
+          font-size: 17px;
+          display: block;
+          border: none;
+          border-radius: 11px 0 0 0;
+          margin-bottom: 1px;
+        }
+        .login-page input:last-of-type{
+          padding: 22px;
+          background-color: white;
+          font-size: 17px;
+          display: block;
+          border: none;
+          border-radius: 0 0 11px 0;
+        }
+        .login-page button{
+          width: 236px;
+          padding: 14px;
+          background-color: black;
+          color: white;
+          border: none;
+          border-radius: 11px 0 11px 0;
+          margin-top: 36px;
+        }
+        .login-page button:hover{color: black;background: white;}
+        .login-page p{
+          color: white;
+          margin-top: 36px;
+        }
+        .login-page a{color: #fff;}
+        .login-page a:hover{color:midnightblue}
+  
+        .register-page{
+          padding: 36px 524px;
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: space-around;
+          color: white;
+          background: #fff;
+        }
+        .register-page input{
+          margin-bottom: 11px;
+          padding: 11px;
+          font-size: 14px;
+          border-radius: 11px 0 11px 0;
+          border: 0;
+          background-color: #dddddd;
+        }
+        .register-page label{
+          background-color: #45bfef;
+          padding: 11px;
+          border-radius: 0 11px 0 11px;
+          margin-top: 11px;
+          font-size: 17px;
+        }
+        .register-page button{
+          width: 236px;
+          padding: 14px;
+          background-color: black;
+          color: white;
+          border: none;
+          border-radius: 11px 0 11px 0;
+          margin: 0 auto;
+        }
+        .register-page button:hover{
+          background-color: #45bfef;
+          color: black;
+        }
+        .dash-board-title{
+          width:100%;
+          display:flex !important;
+          flex-flow:row wrap;
+          justify-content: space-around;
+          align-items: center;
+          background-color:#ddd;
+          padding: 11px 0;
+        }
+        .dash-board-title a{
+          color: black;
+          font-size: 21px;
+          padding: 9px;
+        }
+        .dash-board-title a:hover{
+          background-color: #45bfef;
+          color: #fff;
+          text-decoration: none;
+        }
+        .dash-board-title span{
+          color: #2784a9;
+          font-size: 32px;
+          font-weight: lighter;
+          border-bottom: 3px dotted #46bfef;
+        }
+        .dashboard-link{
+          line-height: 70px;
+          height: 70px;
+          margin-right: -524px;
+          font-size: 17px;
+        }
+        .dashboard-link a:hover{text-decoration: none;}
+        .right-dashboard{
+          display: flex;
+          flex-flow: column wrap;
+          justify-content: space-between;
+          align-items: flex-end;
+        }
+      </style>
+
+  </head>
+
+  <body>
+
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
